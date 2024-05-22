@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "aws-thought",
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
