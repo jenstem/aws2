@@ -61,7 +61,6 @@ router.post("/users", (req, res) => {
             "thought": req.body.thought,
         },
     };
-
     dynamodb.put(params, (err, data) => {
         if (err) {
             console.error(
