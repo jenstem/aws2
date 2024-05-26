@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use('/api/', userRoutes);
-app.use('api/', imageRoutes);
+app.use('/api/', imageRoutes);
 
 app.listen(PORT, () =>
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
