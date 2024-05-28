@@ -56,9 +56,10 @@ router.post("/users", (req, res) => {
     const params = {
         TableName: table,
         Item: {
-            "username": req.body.username,
-            "createdAt": Date.now(),
-            "thought": req.body.thought,
+            username: req.body.username,
+            createdAt: Date.now(),
+            thought: req.body.thought,
+            image: req.body.image,
         },
     };
     dynamodb.put(params, (err, data) => {
