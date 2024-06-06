@@ -14,13 +14,7 @@ const Profile = props => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://18.219.101.44/api/users/${userParam}`,
-        {
-          mode: 'cors',
-          headers: {
-            ContentType: 'application/json',
-          },
-        });
+        const res = await fetch(`/api/users/${userParam}`);
         const data = await res.json();
         console.log(data);
         setThoughts([...data]);

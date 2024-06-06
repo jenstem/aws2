@@ -9,17 +9,16 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://18.219.101.44/api/users');
+        const res = await fetch('/api/users');
         const jsonData = await res.json();
-        const _data = jsonData.sort((a, b) =>
-          a.createdAt < b.createdAt ? 1 : -1,
-        );
-        setThoughts([..._data]);
+        // sort the array by createdAt property ordered by descending values
+        const data = jsonData.sort((a, b) => (a.createdAt < b.createdAt) ? 1 : -1);
+        setThoughts([...data]);
         setIsLoaded(true);
       } catch (error) {
         console.log(error);
       }
-    };
+    }
     fetchData();
   }, []);
 
@@ -33,7 +32,7 @@ const Home = () => {
           {!isLoaded ? (
             <div>Loading...</div>
           ) : (
-              <ThoughtList thoughts={thoughts} setThoughts={setThoughts} title="Some Feed for Thought(s)..." />
+              <ThoughtList thoughts={thoughts} setThoughts={setThoughts} title="Deep Thought(s)..." />
             )}
         </div>
       </div>
